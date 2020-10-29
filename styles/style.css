@@ -1,26 +1,201 @@
-* {
-  box-sizing: border-box;
+
+body {
+  background: #440047;
+  color: #fc8210;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+header {
+
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.title {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 35px;
 }
 
-.body-outer {
-  display: inline-block;
-  background: #02ed9d;
-  background: linear-gradient(180deg, #02ed9d, #009be2);
-  padding: 2px;
-  margin: 20px;
+.scoreboard {
+  display: flex;
+  justify-content: space-evenly;
 }
-
-.body-inner {
-  display: inline-block;
+.score,.subtitle, .display__time-left {
+  
+ 
+  font-size: 2rem;
+  line-height: 1;
+  margin: 10px;
   padding: 10px 20px;
-  min-width: 300px;
-  background-color: white;
+  
+}
+.game {
+  flex-wrap: wrap;
+  display: flex;
+  height: 500px;
+  margin: 0 auto;
+  width: 700px;
+  padding-bottom: 10px;
+ cursor: url(img/bone-48.png), auto;
+}
+.couch {
+  flex: 1 0 33.33%;
+  position: relative;
+  overflow: hidden;
 }
 
-button {
-  cursor: pointer;
-  padding: 10px;
+.couch:after {
+  background: url(img/couch-pink.svg) bottom center no-repeat;
+  background-size: contain;
+  bottom: -30px;
+  content: '';
+  display: block;
+  height: 90px;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
 }
+.ollie {
+  background: url(img/ollie_toon.png) bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  height: 90%;
+  transition: all 0.4s;
+  top: 100%;
+  width: 100%;
+}
+.ollie:active{ background:green; }
+.couch.up .ollie {
+  top: 0;
+}
+
+.button {
+  width: 150px;
+  height: 60px;
+  
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+  background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(150px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+
+  @media (max-width: 667px) {
+    .game {
+      width: 667px;
+      height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+  
+    .score {
+      width: 35px;
+      font-size: 15px;
+      height: 40px;
+     
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      padding: 5px;
+    }
+  
+    
+  
+    .couch:after {
+      display: block;
+    
+      background-size: contain;
+      content: '';
+      max-width: 70%;
+      height: 60px;
+      position: absolute;
+      z-index: 2;
+      bottom: -30px;
+    }
+  
+    .ollie {
+    
+      background-size: 40%;
+      position: absolute;
+      top: 100%;
+      max-width: 70%;
+      height: 60%;
+      transition: all 0.7s;
+    }
+  
+    .couch.up .ollie {
+      top: 40px;
+    }
+  }
+  

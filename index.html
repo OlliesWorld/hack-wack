@@ -7,15 +7,57 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="shortcut icon" href="./favicon.ico">
   </head>
-  <body>
-    <main class="body-outer">
-      <div class="body-inner">
-        <h1>hack-wack</h1>
-        <h2>HAPPY HACKING!</h2>
-        <p>Counter: <span id="output">0</span></p>
-        <button id="increment-button">Increment</button>
+  <body >
+    <header>
+      <h1 class="title ">Catch-an-Ollie</h1>
+      <button data-time="20" class="button" onClick="startGame(); startTimer();" alt="Thanks to Cole McComb for button">Start</button>
+      <div class="scoreboard">
+        <h3 class="subtitle">Score:<span class="score">0 </span></h3>
+      
+        <h1 class="display__time-left">Time</h1>
+    </div>
+        
+     
+    </header>
+
+    <div class="game">
+      <div class="couch couch1">
+        <div class="ollie"></div>
       </div>
-    </main>
+      <div class="couch couch2">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch3">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch4">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch5">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch6">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch7">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch8">
+        <div class="ollie"></div>
+      </div>
+      <div class="couch couch9">
+        <div class="ollie"></div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>
+        &copy; Catch-an-Ollie &bull; Crafted with
+        <span role="img" aria-label="love with Olliesworld.rocks">💙</span> by
+        <a href="https://olliesworld.rocks">Roni</a>
+      </p>
+    </footer>
     <script src="./src/index.js"></script>
+    <script src="./src/timer.js"></script>
   </body>
 </html>
