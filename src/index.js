@@ -33,7 +33,7 @@ function peep() {
     }, time);
 }
 
-function startGame() {
+window.startGame = function startGame(){
     scoreBoard.textContent = 0;
     timeUp = false;
     score = 0;
