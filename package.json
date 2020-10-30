@@ -10,6 +10,7 @@
     "build": "rm -fr .cache dist && parcel build index.html --public-url '.'"
   },
   "devDependencies": {
+    "@featurepeek/peek": "^0.6.8",
     "parcel": "^1.12.4"
   }
 }
